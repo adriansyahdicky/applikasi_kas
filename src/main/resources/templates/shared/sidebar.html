@@ -1,0 +1,78 @@
+<div xmlns:th="http://www.w3.org/1999/xhtml"
+     th:fragment="sidebar"
+     xmlns:sec="http://www.thymeleaf.org/extras/spring-security5">
+
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="/dist/img/avatar2.png" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                       <b sec:authentication="principal.firstName">firstName</b> <b sec:authentication="principal.lastName">lastName</b>
+                    <br/>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </div>
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">KAS MENU</li>
+                <li><a th:href="@{'/dashboard'}"><i class="fa fa-dashboard"></i> <span>Home</span></a></li>
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Master</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a th:href="@{'/customer'}"><i class="fa fa-circle-o"></i> Customer</a></li>
+                        <li><a th:href="@{'/supplier'}"><i class="fa fa-circle-o"></i> Supplier</a></li>
+                        <li><a th:href="@{'/user'}"><i class="fa fa-circle-o"></i> User</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-edit"></i>
+                        <span>Transaksi</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a th:href="@{'/pesanan'}"><i class="fa fa-circle-o"></i>Pesan Barang</a></li>
+                        <li><a th:href="@{'/pembelian'}"><i class="fa fa-circle-o"></i>Pembelian Barang</a></li>
+                        <li><a th:href="@{'/pengeluaran'}"><i class="fa fa-circle-o"></i>Pengeluaran Barang</a></li>
+                        <li><a th:href="@{'/penjualan'}"><i class="fa fa-circle-o"></i>Penjualan Barang</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-edit"></i>
+                        <span>Laporan</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a th:href="@{'/laporan_pesanan'}"><i class="fa fa-circle-o"></i>Laporan Pesan Barang</a></li>
+                        <li><a th:href="@{'/laporan_pembelian'}"><i class="fa fa-circle-o"></i>Laporan Pembelian Barang</a></li>
+                        <li><a th:href="@{'/laporan_penjualan'}"><i class="fa fa-circle-o"></i>Laporan Penjualan Barang</a></li>
+                        <li><a th:href="@{'/laporan_pengeluaran'}"><i class="fa fa-circle-o"></i>Laporan Pengeluaran Barang</a></li>
+                        <li><a th:href="@{'/laporan_penerimaan'}"><i class="fa fa-circle-o"></i>Laporan Penerimaan Barang</a></li>
+                    </ul>
+                </li>
+
+
+
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+</div>

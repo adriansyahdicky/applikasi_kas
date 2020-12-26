@@ -1,0 +1,73 @@
+<section class="content">
+    <div class="row">
+
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Penjualan</h3>
+                </div>
+
+                <div class="box-body">
+
+                    <div class="row">
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Tanggal</label>
+
+                                <div class="col-sm-8">
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="hidden" id="id_pembelian">
+                                        <input type="text" class="form-control pull-right" id="tanggal_penjualan" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Tipe Pembayaran</label>
+
+                                <div class="col-sm-8">
+                                    <select class="form-control select2" id="tipe_pembayaran" style="width: 100%;">
+                                        <option value="">Please Selected</option>
+                                        <option value="Cash">Cash</option>
+                                        <option value="Transfer">Transfer</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <br/>
+                            <br/>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <table id="itemPenjualan" class="table table-bordered table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>Nama Barang</th>
+                                            <th>Qty</th>
+                                            <th>Harga Jual</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody >
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-8">
+                                <button type="button" id="btnSavePenjualan" class="btn btn-success">Simpan</button>
+                            </div>
+                        </form>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

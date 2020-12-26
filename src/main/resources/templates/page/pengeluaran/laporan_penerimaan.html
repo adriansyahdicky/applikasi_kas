@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Laporan Penerimaan Barang</title>
+</head>
+
+<body>
+<div layout:fragment="content">
+    <section class="content">
+        <div class="row">
+
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Data Laporan  Penerimaan Barang</h3>
+                    </div>
+
+                    <div class="box-body">
+
+                        <div class="container-fluid">
+                            <form>
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label>Date From </label>
+                                        <input id="date_from" class="date-search" title="datepicker" style="width: 100%" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label>Date To</label>
+                                        <input id="date_to" class="date-search" title="datepicker" style="width: 100%" />
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary" id="btn-search-fuel"><span class="fa fa-search"></span> Search</button>
+                            </form>
+                        </div>
+
+                        <br />
+                        <br />
+
+                        <div class="container-fluid">
+                            <div class="col-md-12" id="gridview"></div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div th:remove="tag" layout:fragment="footer-scripts">
+
+    <script type="text/javascript" src="/js/laporan_penerimaan.js?t=Date.Now()"></script>
+</div>
+</body>
+</html>

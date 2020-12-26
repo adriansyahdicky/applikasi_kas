@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <section class="content">
+        <div class="row">
+
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Data User</h3>
+                    </div>
+
+                    <div class="box-body">
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-sm" id="addUser"><i class="fa fa-plus-circle"></i> Add New</button>
+                        </div>
+
+                        <br/><br/>
+
+                        <table id="tblUser" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Hak Akses</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="modal-user">
+        <div class="modal-dialog">
+            <th:block th:include="/page/user/create"></th:block>
+        </div>
+    </div>
+
+</div>
+<div th:remove="tag" layout:fragment="footer-scripts">
+
+    <script type="text/javascript" src="/js/user.js?t=Date.Now()"></script>
+</div>
+</body>
+</html>

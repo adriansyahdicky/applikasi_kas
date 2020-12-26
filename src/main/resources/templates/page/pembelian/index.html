@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Pembelian Barang</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <section class="content" id="show-hide-content">
+        <div class="row">
+
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Data Pembelian Barang</h3>
+                    </div>
+
+                    <div class="box-body">
+
+
+                        <table id="tblPesananNew" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Nama Customer</th>
+                                <th>Status</th>
+                                <th>Detail</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content hide" id="show-hide-content2">
+        <div class="row">
+           <th:block th:include="/page/pembelian/detail_pembelian"></th:block>
+        </div>
+    </section>
+
+
+</div>
+<div th:remove="tag" layout:fragment="footer-scripts">
+
+    <script type="text/javascript" src="/js/pembelian.js?t=Date.Now()"></script>
+</div>
+</body>
+</html>
