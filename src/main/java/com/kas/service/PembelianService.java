@@ -13,4 +13,5 @@ public interface PembelianService {
     List<Pembelian> getPembelians();
     Page<Pembelian> getPembelians(Pageable pageable, String tglFrom, String tglTo);
     ShowPembelianDetailResponse getShowPembelianDetail(Long id);
+    void DeletePembelianDetail(Long id);
 }

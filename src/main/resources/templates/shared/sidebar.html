@@ -22,7 +22,7 @@
                 <li class="header">KAS MENU</li>
                 <li><a th:href="@{'/dashboard'}"><i class="fa fa-dashboard"></i> <span>Home</span></a></li>
 
-                <li class="treeview">
+                <li th:if="${#request.isUserInRole('ROLE_OPERATIONAL')}" class="treeview">
                     <a href="#">
                         <i class="fa fa-laptop"></i>
                         <span>Master</span>
@@ -36,7 +36,7 @@
                         <li><a th:href="@{'/user'}"><i class="fa fa-circle-o"></i> User</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
+                <li th:if="${#request.isUserInRole('ROLE_OPERATIONAL')}" class="treeview">
                     <a href="#">
                         <i class="fa fa-edit"></i>
                         <span>Transaksi</span>
@@ -48,10 +48,25 @@
                         <li><a th:href="@{'/pesanan'}"><i class="fa fa-circle-o"></i>Pesan Barang</a></li>
                         <li><a th:href="@{'/pembelian'}"><i class="fa fa-circle-o"></i>Pembelian Barang</a></li>
                         <li><a th:href="@{'/pengeluaran'}"><i class="fa fa-circle-o"></i>Pengeluaran Barang</a></li>
+                    </ul>
+                </li>
+                <li th:if="${#request.isUserInRole('ROLE_FINANCE')}" class="treeview">
+                    <a href="#">
+                        <i class="fa fa-edit"></i>
+                        <span>Transaksi</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a th:href="@{'/pengeluaran'}"><i class="fa fa-circle-o"></i>Pengeluaran Barang</a></li>
                         <li><a th:href="@{'/penjualan'}"><i class="fa fa-circle-o"></i>Penjualan Barang</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
+                <li th:if="${#request.isUserInRole('ROLE_FINANCE')}"><a th:href="@{'/suratjalan'}"><i class="fa fa-circle-o"></i>Cetak Surat Jalan</a></li>
+                <li th:if="${#request.isUserInRole('ROLE_FINANCE')}"><a th:href="@{'/invoice'}"><i class="fa fa-circle-o"></i>Cetak Invoice Penjualan</a></li>
+                <li th:if="${#request.isUserInRole('ROLE_FINANCE')}"><a th:href="@{'/kwitansi'}"><i class="fa fa-circle-o"></i>Cetak Kwitansi Penjualan</a></li>
+                <li th:if="${#request.isUserInRole('ROLE_FINANCE')}" class="treeview">
                     <a href="#">
                         <i class="fa fa-edit"></i>
                         <span>Laporan</span>
@@ -63,8 +78,21 @@
                         <li><a th:href="@{'/laporan_pesanan'}"><i class="fa fa-circle-o"></i>Laporan Pesan Barang</a></li>
                         <li><a th:href="@{'/laporan_pembelian'}"><i class="fa fa-circle-o"></i>Laporan Pembelian Barang</a></li>
                         <li><a th:href="@{'/laporan_penjualan'}"><i class="fa fa-circle-o"></i>Laporan Penjualan Barang</a></li>
-                        <li><a th:href="@{'/laporan_pengeluaran'}"><i class="fa fa-circle-o"></i>Laporan Pengeluaran Barang</a></li>
-                        <li><a th:href="@{'/laporan_penerimaan'}"><i class="fa fa-circle-o"></i>Laporan Penerimaan Barang</a></li>
+                        <li><a th:href="@{'/laporan_pengeluaran'}"><i class="fa fa-circle-o"></i>Laporan Pengeluaran Kas</a></li>
+                        <li><a th:href="@{'/laporan_penerimaan'}"><i class="fa fa-circle-o"></i>Laporan Penerimaan Kas</a></li>
+                    </ul>
+                </li>
+                <li th:if="${#request.isUserInRole('ROLE_DIREKTUR')}" class="treeview">
+                    <a href="#">
+                        <i class="fa fa-edit"></i>
+                        <span>Laporan</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a th:href="@{'/laporan_pengeluaran'}"><i class="fa fa-circle-o"></i>Laporan Pengeluaran Kas</a></li>
+                        <li><a th:href="@{'/laporan_penerimaan'}"><i class="fa fa-circle-o"></i>Laporan Penerimaan Kas</a></li>
                     </ul>
                 </li>
 

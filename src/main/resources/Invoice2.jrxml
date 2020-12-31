@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4b3cc5e3-fb04-4fc3-bdb2-9bda63f79852">
+
+    <field name="id" class="java.lang.Long">
+
+    </field>
+    <field name="tanggal" class="java.sql.Timestamp">
+
+    </field>
+    <field name="harga" class="java.lang.Double">
+
+    </field>
+    <field name="name_barang" class="java.lang.String">
+
+    </field>
+    <field name="qty" class="java.lang.Integer">
+
+    </field>
+    <field name="alamat" class="java.lang.String">
+
+    </field>
+    <field name="name_customer" class="java.lang.String">
+
+    </field>
+    <variable name="jumlahcount" class="java.lang.Double">
+        <variableExpression><![CDATA[$F{harga}*$F{qty}]]></variableExpression>
+    </variable>
+    <variable name="total" class="java.lang.Double" calculation="Sum">
+        <variableExpression><![CDATA[$V{jumlahcount}]]></variableExpression>
+    </variable>
+    <group name="id">
+        <groupExpression><![CDATA[$F{id}]]></groupExpression>
+    </group>
+    <group name="tanggal">
+        <groupExpression><![CDATA[$F{tanggal}]]></groupExpression>
+    </group>
+    <group name="harga">
+        <groupExpression><![CDATA[$F{harga}]]></groupExpression>
+    </group>
+    <group name="name_barang">
+        <groupExpression><![CDATA[$F{name_barang}]]></groupExpression>
+    </group>
+    <group name="qty">
+        <groupExpression><![CDATA[$F{qty}]]></groupExpression>
+    </group>
+    <group name="alamat">
+        <groupExpression><![CDATA[$F{alamat}]]></groupExpression>
+    </group>
+    <group name="name_customer">
+        <groupExpression><![CDATA[$F{name_customer}]]></groupExpression>
+    </group>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="148" splitType="Stretch">
+            <staticText>
+                <reportElement x="50" y="0" width="410" height="30" forecolor="#000000" uuid="9d44d1b6-8567-4574-90be-de13dddcbbaf"/>
+                <textElement textAlignment="Center">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[CV. CIPTA NIAGA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="35" y="30" width="450" height="20" uuid="9102435f-449f-412d-a224-82e7ea08a5a3"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[General Trading – Mechanical – Electrical – Office Equipments –  Industrial Equipments ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="80" y="50" width="350" height="39" uuid="d00dae2a-ced4-44e3-af38-9c577c0d9c5d"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Office : Jl. RS.Fatmawati / 72 Taman Pondok Labu Blok A Lantai 1 No .8 Pondok Labu - Cilandak - Jakarta Selatan]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="80" y="89" width="350" height="21" uuid="0a3d1f0b-5780-4cc5-9845-e79f2bc5132f"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Telp: 021 - 7591 8326, 7088 3581 Fax : 021 - 7591 8326]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="80" y="110" width="350" height="20" uuid="461bd35f-4e56-43d7-8a06-5fe72e73441e"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Email : cv.ciptaniaga@yahoo.com]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="250" splitType="Stretch">
+            <staticText>
+                <reportElement x="10" y="10" width="70" height="20" uuid="ab086d77-a3f4-4154-930b-8943c8571297"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[No. Order : ]]></text>
+            </staticText>
+            <line>
+                <reportElement x="10" y="0" width="550" height="1" uuid="59a92a43-8529-4b77-9157-ff82b16d49bd"/>
+            </line>
+            <textField>
+                <reportElement x="80" y="10" width="100" height="20" uuid="c95e20ae-e121-4242-bd31-f7cf953c7059"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="210" y="10" width="143" height="20" uuid="05edd6ca-87f1-4ab3-bd9a-94f353c05952"/>
+                <textElement textAlignment="Center"/>
+                <text><![CDATA[FAKTUR PENJUALAN]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="210" y="29" width="143" height="20" uuid="6faf2a38-6710-438b-b5d4-31953ee0d904"/>
+                <textElement textAlignment="Center">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[(invoice)]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="394" y="10" width="79" height="19" uuid="fedfc3ab-2432-4823-a212-0056fab48ffc"/>
+                <text><![CDATA[Nomor : ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="420" y="30" width="65" height="19" uuid="597dd6e3-098a-44fd-b14b-82a2d99d1de0"/>
+                <textElement>
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[/INV/CN/VI/]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="370" y="30" width="51" height="19" uuid="a1800f96-675b-4bc2-a5da-dcf576f7cc44"/>
+                <textElement textAlignment="Right">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <textField pattern="yyyy">
+                <reportElement x="473" y="30" width="75" height="19" uuid="a93b495d-be34-470a-b71c-ad0dce468be7"/>
+                <textElement>
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="10" y="60" width="170" height="20" uuid="42c82638-10e8-4ced-aeef-ad8410004dc4"/>
+                <textElement>
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Pengusaha Kena Pajak :]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="90" width="80" height="20" uuid="de4958f6-033f-4a4f-b469-dff766854d23"/>
+                <text><![CDATA[Nama ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="110" width="80" height="20" uuid="68f84a15-d5d4-47c3-84b0-084e7e07d51e"/>
+                <text><![CDATA[Alamat ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="130" width="80" height="20" uuid="4d2666f4-6060-4d52-90f1-65daf3ae32f6"/>
+                <text><![CDATA[NPWP ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="150" width="80" height="20" uuid="99af3d74-46d9-4888-b0a8-f7dec4b7e0a2"/>
+                <text><![CDATA[No. Pengukuhan ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="90" y="90" width="430" height="20" uuid="7bf488dc-b102-478e-89f9-cad2c3fa055d"/>
+                <text><![CDATA[CV Cipta Niaga]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="90" y="110" width="470" height="20" uuid="42aade60-4afb-4206-9eb7-2e1218b6cca3"/>
+                <text><![CDATA[Jl. Rs. Fatmawati / 72 Taman Pondok Labu Blok A Lt 1. No. 8, Pondok Labu - Cilandak - Jakarta Selatan]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="90" y="130" width="430" height="20" uuid="9f0d378e-c97d-4045-a39f-8dfb7a4c5fd2"/>
+                <text><![CDATA[03.027.901.2-016.000]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="90" y="150" width="80" height="20" uuid="ec4385f2-8cfc-4030-8df2-9c04efd83169"/>
+                <text><![CDATA[-]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="360" y="150" width="80" height="20" uuid="5d42eb12-d0cc-4962-a5d3-3f4c0369f380"/>
+                <text><![CDATA[Tanggal]]></text>
+            </staticText>
+            <textField pattern="MMM d, yyyy">
+                <reportElement x="440" y="150" width="108" height="20" uuid="3227b551-72ef-4559-9eae-b07dcc1eccd0"/>
+                <textFieldExpression><![CDATA[$F{tanggal}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="8" y="170" width="100" height="30" uuid="fb9dcd86-6246-466a-bd4f-6ff91f1a21a8"/>
+                <textElement>
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[CUSTOMER :]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="8" y="199" width="100" height="21" uuid="75be456a-1146-47c6-ba2d-bfdeb77265a1"/>
+                <text><![CDATA[Nama ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="8" y="220" width="100" height="20" uuid="2445eef1-d7f4-44e8-be9e-703533583748"/>
+                <text><![CDATA[Alamat]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="108" y="199" width="434" height="21" uuid="c1930feb-96f5-4ecc-a4b6-3bd4dd0b76d5"/>
+                <textFieldExpression><![CDATA[$F{name_customer}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="110" y="215" width="434" height="25" uuid="f5d04481-5ece-4f16-ac8b-cc73ab538018"/>
+                <textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch">
+            <staticText>
+                <reportElement x="51" y="31" width="140" height="30" uuid="6cee3410-ed79-4f4f-9ab6-bf819eec5ee7">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="07be4a9a-7408-4cbf-ad76-a809a3a1359d"/>
+                </reportElement>
+                <box padding="5">
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Nama Barang]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="191" y="31" width="70" height="30" uuid="ba19fe26-b589-4021-8d71-e5d66396c94b">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="04660a91-8472-4ff6-b8d4-1323a03601e6"/>
+                </reportElement>
+                <box padding="5">
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Kuantum]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="261" y="31" width="101" height="30" uuid="4b59ce08-c4bb-4b21-ac36-7161f3c439bd">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="09b61cee-8970-495f-9823-ab9136752bd2"/>
+                </reportElement>
+                <box padding="5">
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Harga Satuan]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="361" y="31" width="100" height="30" uuid="89f4b5a1-6e3b-4a41-8f4f-9dd1bb3d1a07"/>
+                <box padding="5">
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Jumlah]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="29" splitType="Stretch">
+            <textField>
+                <reportElement x="51" y="0" width="140" height="29" uuid="369b9b96-0de8-43db-9c28-8af83d4404ff">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="07be4a9a-7408-4cbf-ad76-a809a3a1359d"/>
+                </reportElement>
+                <box padding="5">
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{name_barang}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="191" y="1" width="70" height="28" uuid="ecf56552-dea8-4410-b4e4-9db0e52adbf0">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="04660a91-8472-4ff6-b8d4-1323a03601e6"/>
+                </reportElement>
+                <box padding="5">
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.00">
+                <reportElement x="262" y="-1" width="100" height="30" uuid="4ed277df-3a77-442c-8435-0f2e1e817a49">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="09b61cee-8970-495f-9823-ab9136752bd2"/>
+                </reportElement>
+                <box padding="5">
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.00">
+                <reportElement x="361" y="-1" width="100" height="30" uuid="fc0a71cf-814c-4921-b67f-83fed65cb99e"/>
+                <box padding="5">
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$V{jumlahcount}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <summary>
+        <band height="230" splitType="Stretch">
+            <staticText>
+                <reportElement x="50" y="0" width="311" height="20" uuid="0ce819ed-542b-420a-9a70-b94a3495cd52"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Sub Total]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="50" y="20" width="410" height="20" uuid="6758840a-0c23-4667-afb5-a7c433859d7c"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Harga Sudah Termasuk Pajak PPN (10 %)]]></text>
+            </staticText>
+            <textField pattern="#,##0.00">
+                <reportElement x="360" y="0" width="100" height="20" uuid="fcd9a531-7ca1-4d95-b80c-2c935cf78bde"/>
+                <textElement textAlignment="Center">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="50" y="60" width="320" height="20" uuid="db9897f7-f37b-4feb-b829-7c8d692d4e49"/>
+                <text><![CDATA[Pembayaran Dapat Ditransfer Pada Bank Kami Yaitu :]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="50" y="80" width="100" height="20" uuid="85db6042-c526-452f-b0d6-f0d83970ffde"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Bank]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="50" y="100" width="100" height="20" uuid="0938daa4-3be2-4ada-b17d-49e4eba46f4d"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[A/C]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="50" y="120" width="100" height="20" uuid="15fb01f9-68bf-4413-a1fb-74954b32859e"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[A/C Name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="155" y="80" width="165" height="20" uuid="aadff565-c36a-440c-94cb-6afda6dff393"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Mandiri Cab. Aneka Tambang]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="155" y="100" width="165" height="20" uuid="7a2399ef-8f11-45b4-b779-527fe1fbd2be"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[127.0006431066 (Rupiah)]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="155" y="120" width="165" height="20" uuid="9b57194e-632d-4b03-a0ac-abae97ffe1f5"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[CV. CIPTA NIAGA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="380" y="140" width="100" height="20" uuid="2d140ac2-4365-463c-bcde-8a8de75e7d49"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Hormat Kami,]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="380" y="200" width="100" height="30" uuid="60091905-c7de-470c-9a77-84c2d4ed8066"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Finance]]></text>
+            </staticText>
+        </band>
+    </summary>
+</jasperReport>

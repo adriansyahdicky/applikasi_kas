@@ -13,6 +13,27 @@ public class PenjualanViewController {
         return modelAndView;
     }
 
+    @GetMapping("/suratjalan")
+    public ModelAndView suratjalan(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("page/penjualan/invoice");
+        return modelAndView;
+    }
+
+    @GetMapping("/invoice")
+    public ModelAndView invoice(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("page/penjualan/invoice2");
+        return modelAndView;
+    }
+
+    @GetMapping("/kwitansi")
+    public ModelAndView kwitansi(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("page/penjualan/kwitansi");
+        return modelAndView;
+    }
+
     @GetMapping("/laporan_penjualan")
     public ModelAndView laporanpenjualan(){
         ModelAndView modelAndView = new ModelAndView();

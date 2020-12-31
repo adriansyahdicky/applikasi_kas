@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bedde7b6-1ed7-4861-8090-9396a5280fd8">
+
+    <field name="id" class="java.lang.Long">
+
+    </field>
+    <field name="tanggal" class="java.sql.Timestamp">
+
+    </field>
+    <field name="name_barang" class="java.lang.String">
+
+    </field>
+    <field name="harga" class="java.lang.Double">
+
+    </field>
+    <field name="qty" class="java.lang.Integer">
+
+    </field>
+    <field name="name_customer" class="java.lang.String">
+
+    </field>
+    <field name="no_handphone" class="java.lang.String">
+
+    </field>
+    <field name="alamat" class="java.lang.String">
+
+    </field>
+    <group name="id">
+        <groupExpression><![CDATA[$F{id}]]></groupExpression>
+    </group>
+    <group name="tanggal">
+        <groupExpression><![CDATA[$F{tanggal}]]></groupExpression>
+    </group>
+    <group name="name_barang">
+        <groupExpression><![CDATA[$F{name_barang}]]></groupExpression>
+    </group>
+    <group name="harga">
+        <groupExpression><![CDATA[$F{harga}]]></groupExpression>
+    </group>
+    <group name="qty">
+        <groupExpression><![CDATA[$F{qty}]]></groupExpression>
+    </group>
+    <group name="name_customer">
+        <groupExpression><![CDATA[$F{name_customer}]]></groupExpression>
+    </group>
+    <group name="no_handphone">
+        <groupExpression><![CDATA[$F{no_handphone}]]></groupExpression>
+    </group>
+    <group name="alamat">
+        <groupExpression><![CDATA[$F{alamat}]]></groupExpression>
+    </group>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="139" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="300" height="40" uuid="0265bee5-d357-4418-88d3-d3baedd55c9f"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="20" isBold="true"/>
+                </textElement>
+                <text><![CDATA[SURAT JALAN NO]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="190" y="5" width="90" height="30" uuid="2bb92349-a169-4db0-925a-b8d9f2d34cc3"/>
+                <textElement>
+                    <font size="20" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="330" y="5" width="60" height="30" uuid="418a0f1e-4f65-4da0-a154-041b4e883c01"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Tuan]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="400" y="5" width="170" height="30" uuid="8617ccfa-6e24-45b5-a4c1-67527087ef19"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{name_customer}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="400" y="36" width="170" height="30" uuid="7eb57738-df90-4f47-b558-887aa7cc2da2"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{no_handphone}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="400" y="70" width="170" height="60" uuid="e38f99ce-6451-4030-a508-9f76c5470c82"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="60" splitType="Stretch">
+            <staticText>
+                <reportElement x="20" y="20" width="350" height="30" uuid="29c3ff7f-b414-4166-b366-ba28b810060f"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Kami kirimkan barang -barang tersebut dibawah ini dengan kendaraan....................]]></text>
+            </staticText>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch">
+            <staticText>
+                <reportElement x="156" y="30" width="374" height="30" uuid="ca2264ca-911e-4731-b12c-c52eba99ed23">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1233544-0f06-4272-b206-245366133caa"/>
+                </reportElement>
+                <box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+                    <pen lineWidth="0.75"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[NAMA BARANG]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="56" y="30" width="100" height="30" uuid="eba7d8e2-add5-464a-ac9d-3b2ccd62fe70">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="74abb123-8219-4864-a240-2ee0a326a70b"/>
+                </reportElement>
+                <box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+                    <pen lineWidth="0.75"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[BANYAKNYA]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="31" splitType="Stretch">
+            <textField>
+                <reportElement x="156" y="-1" width="374" height="31" uuid="b3d04994-471a-4acd-8dd1-81c2bc48e8fa">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1233544-0f06-4272-b206-245366133caa"/>
+                </reportElement>
+                <box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+                    <pen lineWidth="0.75"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{name_barang}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="56" y="0" width="100" height="30" uuid="14b57b64-71e9-4a27-96df-487a6f7264b7">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="74abb123-8219-4864-a240-2ee0a326a70b"/>
+                </reportElement>
+                <box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+                    <pen lineWidth="0.75"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <summary>
+        <band height="99" splitType="Stretch">
+            <staticText>
+                <reportElement x="20" y="20" width="100" height="30" uuid="c75e9911-7b55-44e3-8a95-efef1360f93c"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Tanda Terima]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="420" y="20" width="100" height="30" uuid="39c6e15b-fd8d-4766-ba0f-916fc7aa070f"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Hormat Kami]]></text>
+            </staticText>
+        </band>
+    </summary>
+</jasperReport>

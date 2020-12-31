@@ -14,4 +14,7 @@ public interface PengeluaranRepository extends JpaRepository<Pengeluaran, Long> 
     @Query(value = "select * from pengeluaran where DATE(tanggal) between :tglFrom and :tglTo ", nativeQuery = true)
     Page<Pengeluaran> findByTanggal(Pageable pageable, @Param("tglFrom") String tglFrom, @Param("tglTo") String tglTo);
 
+    @Query(value = "SELECT SUM(total) AS total_pengeluaran FROM pengeluaran", nativeQuery = true)
+    Double sumTotal();
+
 }

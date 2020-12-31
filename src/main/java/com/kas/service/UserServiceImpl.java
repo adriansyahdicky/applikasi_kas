@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepositroy.findByEmail(username);
-        //boolean isPasswordMatch = passwordEncoder.matches("yawinpassword", user.getPassword());
+        boolean isPasswordMatch = passwordEncoder.matches("yawinpassword", user.getPassword());
 
         if(user == null){
             throw  new UsernameNotFoundException("Invalid Username Or Password");

@@ -55,7 +55,11 @@ function getPesanan(id){
                 $("#tanggal_pembelian").val(data.tanggal);
                 $("#id_pesanan").val(data.pesanan_details[0].pesanan.id);
                 for(var i=0; i<data.pesanan_details.length; i++){
-                    $("#itemPembelian > tbody:last-child").append("<tr> <td class='nama_barang'>"+data.pesanan_details[i].nameBarang+"</td> <td class='qty_barang'>"+data.pesanan_details[i].qty+"</td> <td class='harga_barang'><input type='text' id='harga_barang_beli'></input></td> <td><select class='form-control select2 cboSupplierPembelian' id='cbo_"+data.pesanan_details[i].id+"' style='width: 100%;'></select></td> <td><button type='button' class='btn btn-primary' onclick='updatePembelian($(this), "+data.pesanan_details[i].id+")'>Update</button></td> </tr>");
+                    const escapeRegExp = (string) => {
+                               return string.replace(/[& ]/g, '_');
+                     }
+                     var idrow = escapeRegExp(data.pesanan_details[i].nameBarang);
+                    $("#itemPembelian > tbody:last-child").append("<tr id='row"+idrow+"'> <td class='nama_barang'>"+data.pesanan_details[i].nameBarang+"</td> <td class='qty_barang'>"+data.pesanan_details[i].qty+"</td> <td class='harga_barang'><input type='text' id='harga_barang_beli'></input></td> <td><button type='button' onclick='deletePembelian($(this), "+data.pesanan_details[i].id+")' class='btn btn-danger btn-remove' id="+idrow+">X</button></td> <td><select class='form-control select2 cboSupplierPembelian' id='cbo_"+data.pesanan_details[i].id+"' style='width: 100%;'></select></td> <td><button type='button' class='btn btn-primary' onclick='updatePembelian($(this), "+data.pesanan_details[i].id+")'>Update</button></td> </tr>");
                     getCboSupplier("cbo_"+data.pesanan_details[i].id);
                 }
             }
@@ -193,3 +197,51 @@ $("#btnSavePembelian").click(function(){
                   })
 
 })
+
+function deletePembelian(idrow, id){
+    swal({
+            title: "Are you sure?",
+            text: "Deleted Customer !",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        type: "POST",
+                        url: get_uri() + "/api/pembelian/deletePembelianDetail/" + id,
+                        success: function (data) {
+                            var obj = JSON.parse(data);
+                            swal("Message", obj.status, "success").then((value) => {
+                                if (value) {
+                                    if(itemArray.length != 0){
+                                        var idnamabarang = idrow.attr("id");
+                                        var index = -1;
+                                                  var filteredObj = itemArray.find(function(item, i){
+                                                    var cek_nama_barang = idnamabarang;
+                                                    if(item.idRow === cek_nama_barang){
+                                                      index = i;
+                                                      return i;
+                                                    }
+                                                  });
+                                                  if(itemArray.length === 1){
+                                                    itemArray = [];
+                                                  }
+                                                  else{
+                                                    itemArray.splice(index,index);
+                                                  }
+                                                  $("#row"+idnamabarang+"").remove();
+                                    }
+                                    else{
+                                        $("#row"+idnamabarang+"").remove();
+                                    }
+
+                                }
+                            });
+                        }
+                    })
+                }
+            });
+
+}

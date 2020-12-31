@@ -15,6 +15,8 @@ function formatRupiah(angka){
 			return rupiah;
 		}
 
+
+
 function ShowHideModal(modalName) {
     if ($("#" + modalName + "").hasClass('in')) {
 

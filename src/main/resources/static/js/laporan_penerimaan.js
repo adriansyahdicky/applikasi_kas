@@ -6,7 +6,19 @@ $(document).ready(function () {
                     tglMasuk : null,
                     tglKeluar : null,
             }
+     sumTotal();
 });
+
+function sumTotal(){
+    $.ajax({
+            type:"GET",
+            url:get_uri() + "/api/pengeluaran/sumlaba",
+            contentType:"application/json",
+            success:function(data){
+                $("#txtLaba").val(data);
+            }
+        })
+}
 
 function loadDate() {
     $("#date_from").kendoDatePicker({

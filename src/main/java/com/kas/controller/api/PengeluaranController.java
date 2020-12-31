@@ -79,5 +79,16 @@ public class PengeluaranController {
 
     }
 
+    @GetMapping(value = "/sumlaba")
+    public Double laporanpenerimaan(){
+
+        try{
+            return pengeluaranService.totalLaba();
+        }catch (Exception ex){
+            throw new RuntimeException("error : "+ex.getMessage());
+        }
+
+    }
+
 
 }

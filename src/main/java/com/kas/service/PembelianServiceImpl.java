@@ -4,7 +4,6 @@ import com.kas.constant.StatusConstant;
 import com.kas.dto.PembelianDTO;
 import com.kas.dto.PembelianDetailDTO;
 import com.kas.dto.ShowPembelianDetailResponse;
-import com.kas.dto.ShowPesananDetailResponse;
 import com.kas.entity.*;
 import com.kas.exception.ResourceNotFoundException;
 import com.kas.repository.*;
@@ -38,6 +37,9 @@ public class PembelianServiceImpl implements PembelianService{
 
     @Autowired
     private LogStatusRepository logStatusRepository;
+
+    @Autowired
+    private PesananDetailRepository pesananDetailRepository;
 
     @Override
     public void Save(PembelianDTO pembelianDTO) {
@@ -117,5 +119,12 @@ public class PembelianServiceImpl implements PembelianService{
 
         showPembelianDetailResponse.setPembelian_details(setDetailPembelian);
         return showPembelianDetailResponse;
+    }
+
+    @Override
+    public void DeletePembelianDetail(Long id) {
+        Pesanan_Detail pesanan_detail =  pesananDetailRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Data Pesanan Detail Tidak Ditemukan"));
+        pesananDetailRepository.delete(pesanan_detail);
     }
 }

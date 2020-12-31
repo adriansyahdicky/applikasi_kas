@@ -13,4 +13,5 @@ public interface PengeluaranService {
     Page<Pengeluaran> getPengeluarans(Pageable pageable, String tglFrom, String tglTo);
     Page<Penerimaan> getPenerimaans(Pageable pageable, String tglFrom, String tglTo);
     List<Pengeluaran> getPengeluarans();
+    Double totalLaba();
 }

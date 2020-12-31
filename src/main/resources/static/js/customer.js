@@ -82,7 +82,7 @@ $("#btnSaveCustomer").click(function(){
 function findCustomerById(id){
     $.ajax({
             type:"GET",
-            url:get_uri() + "/api/customer/getById/"+id,
+            url:get_uri() + "/api/pengeluaran/sumlaba",
             contentType:"application/json",
             success:function(data){
                 $("#id_customer").val(data.id);

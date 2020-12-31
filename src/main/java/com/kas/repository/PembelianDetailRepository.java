@@ -14,4 +14,6 @@ public interface PembelianDetailRepository extends JpaRepository<Pembelian_Detai
     @Query(value = "select * from pembelian_detail where pembelian_id=:id", nativeQuery = true)
     List<Pembelian_Detail> getByPembelianId(@Param("id") Long id);
 
+    @Query(value = "SELECT SUM(harga*qty) AS total_pembelian FROM pembelian_detail", nativeQuery = true)
+    Double sumTotal();
 }

@@ -8,6 +8,8 @@ $(document).ready(function () {
             }
 });
 
+
+
 function loadDate() {
     $("#date_from").kendoDatePicker({
         format: "yyyy-MM-dd"

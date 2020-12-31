@@ -3,8 +3,10 @@ package com.kas.service;
 import com.kas.dto.PengeluaranDTO;
 import com.kas.entity.Penerimaan;
 import com.kas.entity.Pengeluaran;
+import com.kas.repository.PembelianDetailRepository;
 import com.kas.repository.PenerimaanRepository;
 import com.kas.repository.PengeluaranRepository;
+import com.kas.repository.PenjualanDetailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,6 +23,12 @@ public class PengeluaranServiceImpl implements PengeluaranService{
 
     @Autowired
     private PenerimaanRepository penerimaanRepository;
+
+    @Autowired
+    private PenjualanDetailRepository penjualanDetailRepository;
+
+    @Autowired
+    private PembelianDetailRepository pembelianDetailRepository;
 
     @Override
     public void Save(PengeluaranDTO pengeluaranDTO) {
@@ -46,5 +54,14 @@ public class PengeluaranServiceImpl implements PengeluaranService{
     @Override
     public List<Pengeluaran> getPengeluarans() {
         return pengeluaranRepository.findAll();
+    }
+
+    @Override
+    public Double totalLaba() {
+        Double total_pembelian = pembelianDetailRepository.sumTotal();
+        Double total_pengeluaran = pengeluaranRepository.sumTotal();
+        Double total_penjualan = penjualanDetailRepository.sumTotal();
+
+        return total_penjualan - (total_pembelian + total_pengeluaran);
     }
 }

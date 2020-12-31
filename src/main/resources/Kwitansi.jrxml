@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Kwitansi" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3f1d3e5c-28c5-449f-a6cc-27ed037c420f">
+
+    <parameter name = "banyak" class = "java.lang.String"/>
+
+    <field name="id" class="java.lang.Long">
+
+    </field>
+    <field name="tanggal" class="java.sql.Timestamp">
+
+    </field>
+    <field name="alamat" class="java.lang.String">
+
+    </field>
+    <field name="name_customer" class="java.lang.String">
+
+    </field>
+    <field name="no_handphone" class="java.lang.String">
+
+    </field>
+    <field name="nominal" class="java.lang.Double">
+
+    </field>
+    <group name="id">
+        <groupExpression><![CDATA[$F{id}]]></groupExpression>
+    </group>
+    <group name="tanggal">
+        <groupExpression><![CDATA[$F{tanggal}]]></groupExpression>
+    </group>
+    <group name="alamat">
+        <groupExpression><![CDATA[$F{alamat}]]></groupExpression>
+    </group>
+    <group name="name_customer">
+        <groupExpression><![CDATA[$F{name_customer}]]></groupExpression>
+    </group>
+    <group name="no_handphone">
+        <groupExpression><![CDATA[$F{no_handphone}]]></groupExpression>
+    </group>
+    <group name="nominal">
+        <groupExpression><![CDATA[$F{nominal}]]></groupExpression>
+    </group>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="151" splitType="Stretch">
+            <staticText>
+                <reportElement x="50" y="0" width="410" height="30" forecolor="#000000" uuid="f9e3091f-a816-41f8-becb-96e83437f1cd"/>
+                <textElement textAlignment="Center">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[CV. CIPTA NIAGA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="35" y="30" width="450" height="20" uuid="9409e0e2-0e12-4ec6-aa59-6c54fa883191"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[General Trading – Mechanical – Electrical – Office Equipments –  Industrial Equipments ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="80" y="50" width="350" height="39" uuid="46c0c396-8427-4763-a9ec-4d293cb02703"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Office : Jl. RS.Fatmawati / 72 Taman Pondok Labu Blok A Lantai 1 No .8 Pondok Labu - Cilandak - Jakarta Selatan]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="80" y="89" width="350" height="21" uuid="228ee55b-53cd-408c-93ad-8df8413c3220"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Telp: 021 - 7591 8326, 7088 3581 Fax : 021 - 7591 8326]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="80" y="110" width="350" height="20" uuid="3e03de7a-f788-4979-bb30-2d9bd8a46218"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Email : cv.ciptaniaga@yahoo.com]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="491" splitType="Stretch">
+            <line>
+                <reportElement x="10" y="-1" width="550" height="1" uuid="ed65c946-139e-41f7-8643-f1437c131159"/>
+            </line>
+            <staticText>
+                <reportElement x="140" y="20" width="280" height="30" uuid="80252c79-3257-4fdb-9521-58be7227dade"/>
+                <textElement textAlignment="Center">
+                    <font size="16" isBold="true"/>
+                </textElement>
+                <text><![CDATA[KWITANSI]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="20" y="70" width="170" height="30" uuid="a22d3d59-cc43-4761-a783-a4b4d627182f"/>
+                <textElement textAlignment="Left">
+                    <font size="13" isItalic="false"/>
+                </textElement>
+                <text><![CDATA[Sudah Terima Dari ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="20" y="140" width="170" height="30" uuid="960e3e34-53aa-4775-85aa-3f75316c6279"/>
+                <textElement textAlignment="Left">
+                    <font size="13" isItalic="false"/>
+                </textElement>
+                <text><![CDATA[Banyaknya Uang]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="20" y="210" width="170" height="30" uuid="f0bc20ad-cd59-4fc1-8334-dbfd2bb1bfdf"/>
+                <textElement textAlignment="Left">
+                    <font size="13" isItalic="false"/>
+                </textElement>
+                <text><![CDATA[Untuk Pembayaran]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="20" y="100" width="170" height="30" uuid="8e225eb6-bf9b-4713-aaac-007e95e5fd11"/>
+                <textElement>
+                    <font isItalic="true"/>
+                </textElement>
+                <text><![CDATA[Received From]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="20" y="170" width="170" height="30" uuid="bff7e4e6-dc7b-42a9-98d6-9b8081c38caa"/>
+                <textElement>
+                    <font isItalic="true"/>
+                </textElement>
+                <text><![CDATA[Amount Received]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="20" y="240" width="170" height="30" uuid="88bfc0f7-2ba5-40f1-a162-0c6d9a488253"/>
+                <textElement>
+                    <font isItalic="true"/>
+                </textElement>
+                <text><![CDATA[In Payment Of]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="190" y="70" width="370" height="30" uuid="3c829e9e-4f73-4b34-a18d-a1fa0f29909b"/>
+                <textElement>
+                    <font size="13" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{name_customer}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="190" y="140" width="370" height="30" uuid="bd05ceaf-d78c-4457-a686-fcc3058cb465"/>
+                <textElement>
+                    <font size="13" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{banyak}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="190" y="210" width="200" height="30" uuid="c072f208-22e2-4c60-922f-90e54a2ce3a2"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Pembelian Barang pada Nomor Invoice ]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="380" y="210" width="60" height="30" uuid="c37b2018-9372-4e8b-8f6b-0e6eecd2e1a8"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="190" y="240" width="50" height="30" uuid="90ea9cba-0b5a-414e-91af-51679f19291a"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Bulan]]></text>
+            </staticText>
+            <textField pattern="MMMM, yyyy">
+                <reportElement x="240" y="240" width="150" height="30" uuid="cfb0682b-0f7f-4b1c-a3f9-8358cf2e07e7"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{tanggal}]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.00">
+                <reportElement x="70" y="330" width="150" height="30" uuid="265b0420-d411-4fd5-94a2-c7f62af9b14e"/>
+                <textElement>
+                    <font size="13" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nominal}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="20" y="330" width="50" height="30" uuid="d7515469-7785-476b-ac16-5e2c49d3d80f"/>
+                <textElement textAlignment="Right">
+                    <font size="13" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Rp.]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="38" y="400" width="100" height="30" uuid="f1458add-5262-4bba-b783-419dd369c11e"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Dibayar Oleh]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="12" y="430" width="160" height="30" uuid="7835d253-cf49-4a6c-9e32-04277a53864a"/>
+                <textElement textAlignment="Center"/>
+                <text><![CDATA[(................................)]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="12" y="460" width="160" height="30" uuid="831a9429-a421-42ac-a264-7c942e3067af"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Konsumen]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="230" y="400" width="100" height="30" uuid="0a24f13b-ece9-4270-951d-8fdb34096131"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Mengetahui]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="204" y="430" width="160" height="30" uuid="dc0a2909-43e9-4565-aafd-f06f20c1fd8f"/>
+                <textElement textAlignment="Center"/>
+                <text><![CDATA[(................................)]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="204" y="460" width="160" height="30" uuid="2950d425-3e96-429c-8756-39f08c338a31"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Bag. Pengadaan Barang]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="421" y="400" width="100" height="30" uuid="7c2f3110-9475-4a17-8aff-b5c3d280cd1e"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Diterima Oleh]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="395" y="430" width="160" height="30" uuid="77864b9b-c641-448b-b725-2337b45a6f27"/>
+                <textElement textAlignment="Center"/>
+                <text><![CDATA[(................................)]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="395" y="460" width="160" height="30" uuid="5b49a6e4-c5be-4b6e-862e-54e8cc9bec92"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Bag. Operasional]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="340" y="330" width="60" height="30" uuid="be396914-1599-4b5d-9749-ef9a0cbcf7fb"/>
+                <textElement textAlignment="Right"/>
+                <text><![CDATA[Jakarta,]]></text>
+            </staticText>
+            <textField pattern="MMMM d, yyyy">
+                <reportElement x="400" y="330" width="145" height="30" uuid="2f1debb6-1475-45cc-96e5-6e174cd1be31"/>
+                <textFieldExpression><![CDATA[$F{tanggal}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageHeader>
+</jasperReport>

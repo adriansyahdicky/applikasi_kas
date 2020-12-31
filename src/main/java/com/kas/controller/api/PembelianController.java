@@ -82,4 +82,18 @@ public class PembelianController {
 
     }
 
+    @PostMapping(value = "/deletePembelianDetail/{id}")
+    public String deletePembelianDetail(@PathVariable("id") Long id) throws Exception {
+
+        JSONObject jsonObject = new JSONObject();
+
+        try{
+            pembelianService.DeletePembelianDetail(id);
+            jsonObject.put("status", "Success");
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+        return jsonObject.toString();
+    }
+
 }

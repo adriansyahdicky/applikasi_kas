@@ -43,11 +43,9 @@ $(document).ready(function () {
               });
 
       $(document).on('click', '.btn-remove', function(){
-          debugger;
           var idnamabarang = $(this).attr("id");
           var index = -1;
           var filteredObj = itemArray.find(function(item, i){
-            debugger;
             var cek_nama_barang = idnamabarang;
             if(item.idRow === cek_nama_barang){
               index = i;
