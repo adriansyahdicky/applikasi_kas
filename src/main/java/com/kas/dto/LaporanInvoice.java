@@ -21,5 +21,8 @@ public class LaporanInvoice {
     private int qty;
     private String no_handphone;
     private String alamat;
+    private Timestamp tanggal;
+    private Double harga;
+
 
 }

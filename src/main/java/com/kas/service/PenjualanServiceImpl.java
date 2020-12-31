@@ -117,6 +117,8 @@ public class PenjualanServiceImpl implements PenjualanService{
             laporanInvoice.setId(id);
             laporanInvoice.setNo_handphone(penjualan.getCustomer().getNoHandphone());
             laporanInvoice.setAlamat(penjualan.getCustomer().getAlamat());
+            laporanInvoice.setTanggal(penjualan.getTanggal());
+            laporanInvoice.setHarga(pd.getHarga());
 
             laporanInvoice.setName_barang(pd.getNameBarang());
             laporanInvoice.setQty(pd.getQty());
