@@ -4,9 +4,13 @@ import com.kas.dto.UserRegistrationDTO;
 import com.kas.entity.Role;
 import com.kas.entity.User;
 import com.kas.entity.authentication.CustomUserPrincipal;
+import com.kas.exception.AuthenticationException;
 import com.kas.repository.RoleRepository;
 import com.kas.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -57,8 +62,11 @@ public class UserServiceImpl implements UserService{
     @Transactional
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
         User user = userRepositroy.findByEmail(username);
-        boolean isPasswordMatch = passwordEncoder.matches("yawinpassword", user.getPassword());
+
+
+        //boolean isPasswordMatch = passwordEncoder.matches("yawinpassword", user.getPassword());
 
         if(user == null){
             throw  new UsernameNotFoundException("Invalid Username Or Password");

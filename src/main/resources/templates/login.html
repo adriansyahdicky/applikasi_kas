@@ -39,6 +39,10 @@
         <p class="login-box-msg">Sign in to start your session</p>
 
         <form th:action="@{/login}" method="post">
+            <div align="center" th:if="${param.error}">
+                <p style="font-size:20; color:#FF1C19;">Email Or Password Invalid</p>
+            </div>
+            <br/><br/>
             <div class="form-group has-feedback">
                 <input type="email" id="username" name="username" required="required" class="form-control" placeholder="Email"/>
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

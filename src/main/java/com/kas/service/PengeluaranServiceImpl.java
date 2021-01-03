@@ -58,10 +58,10 @@ public class PengeluaranServiceImpl implements PengeluaranService{
 
     @Override
     public Double totalLaba() {
-        Double total_pembelian = pembelianDetailRepository.sumTotal();
+        //Double total_pembelian = pembelianDetailRepository.sumTotal();
         Double total_pengeluaran = pengeluaranRepository.sumTotal();
         Double total_penjualan = penjualanDetailRepository.sumTotal();
 
-        return total_penjualan - (total_pembelian + total_pengeluaran);
+        return total_penjualan - total_pengeluaran;
     }
 }
